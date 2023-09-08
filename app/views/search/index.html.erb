@@ -1,0 +1,19 @@
+<h1 class="page-title"><%= @facade.selected_nation%></h1>
+<% if @facade.total_members > 0 %>
+  <h1>Search Results</h1>
+  <p>Total Members: <%= @facade.total_members %></p>
+  <h2>First 25 Members</h2>
+  <ul>
+    <% @facade.first_25_characters.each do |character| %>
+      <li>
+        <strong>Name:</strong> <%= character["name"] %> <br>
+        <strong>Affiliation:</strong> <%= character["affiliation"] %> <br>
+        <strong>Enemies:</strong> <%= character["enemies"].join(', ') %> <br>
+        <img src="<%= character["photoUrl"] %>" alt="<%= character["name"] %>"><br>
+        <br>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No members found for the selected nation.</p>
+<% end %>
