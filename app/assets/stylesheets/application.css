@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Align Page title to center and capitalize */
+    .page-title {
+    text-align: center;
+    text-transform: capitalize;
+    }
